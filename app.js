@@ -4,7 +4,7 @@ import path from "path";
 import axios from "axios";
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT|| 5000;
 const APIKEY = `82e981428a423f11b34c8087d6b5f90c`;
 const __dirname = path.resolve();
 
