@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather⛅</title>
+    <link rel="stylesheet" href="stylesheet/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Check out the Weather⛅ of your city!</h1>
+        <div class="form-container">
+            <form action="/" method="post">
+                <input class="search-box" type="text" name="city" placeholder="City Name">
+                <input class="submit" type="submit" value="Submit">
+                
+                 
+                </form>
+
+                <% if (locals.iconSrc && locals.cityName && locals.description && locals.actualTemperature && locals.feelsLikeTemperature) { %>
+                    <img class="weather-icon" src="<%= iconSrc %>" alt="weather-icon">
+                    <h1 class="city-name"><span class="seperator">|</span> <%=cityName%></h1>
+                    <h2 class="weather-description">Weather Description: <%=description%></h2>
+                    <h2 class="actual-temperature">Temperature: <%=actualTemperature%>°C</h2>
+                    <h2 class="feels-like-temperature">Feels Like: <%=feelsLikeTemperature%>°C</h2>
+                   <% } %>
+
+                    <% if (locals.error) { %>
+                        <h2 class="error-message"><%=error%></h2>
+                    <% } %>
+                
+            </div>
+            <p class="footer">© Sarthak Saxena 🙇‍♂️</p>
+    </div>
+</body>
+</html>
